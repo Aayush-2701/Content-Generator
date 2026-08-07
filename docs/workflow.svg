@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="420" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill: #ffffff; stroke: #2d3748; stroke-width: 2px; rx: 8px; }
+    .title { font: bold 14px sans-serif; fill: #1a202c; }
+    .desc { font: 12px sans-serif; fill: #2d3748; }
+    .arrow { stroke: #4a5568; stroke-width: 2px; fill: none; marker-end: url(#arrowhead);} 
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568" />
+    </marker>
+  </defs>
+
+  <!-- Data -->
+  <rect x="40" y="30" width="180" height="70" class="box" />
+  <text x="130" y="55" class="title" text-anchor="middle">Raw Data</text>
+  <text x="130" y="72" class="desc" text-anchor="middle">Data/raw_posts.json</text>
+
+  <!-- Preprocess -->
+  <rect x="280" y="30" width="200" height="70" class="box" />
+  <text x="380" y="50" class="title" text-anchor="middle">Preprocess</text>
+  <text x="380" y="68" class="desc" text-anchor="middle">preprocess.py (LLM enrichment)</text>
+
+  <!-- Processed Data -->
+  <rect x="540" y="30" width="200" height="70" class="box" />
+  <text x="640" y="55" class="title" text-anchor="middle">Processed Data</text>
+  <text x="640" y="72" class="desc" text-anchor="middle">Data/processed_posts.json</text>
+
+  <!-- few_shot -->
+  <rect x="40" y="160" width="200" height="70" class="box" />
+  <text x="140" y="185" class="title" text-anchor="middle">Few-shot</text>
+  <text x="140" y="203" class="desc" text-anchor="middle">few_shot.py (filter examples)</text>
+
+  <!-- Streamlit UI -->
+  <rect x="280" y="160" width="200" height="70" class="box" />
+  <text x="380" y="185" class="title" text-anchor="middle">Streamlit UI</text>
+  <text x="380" y="203" class="desc" text-anchor="middle">main.py (user input)</text>
+
+  <!-- Post Generator -->
+  <rect x="540" y="160" width="200" height="70" class="box" />
+  <text x="640" y="170" class="title" text-anchor="middle">Post Generator</text>
+  <text x="640" y="188" class="desc" text-anchor="middle">post_generator.py</text>
+  <text x="640" y="206" class="desc" text-anchor="middle">builds prompt + examples</text>
+
+  <!-- LLM -->
+  <rect x="280" y="300" width="200" height="70" class="box" />
+  <text x="380" y="325" class="title" text-anchor="middle">LLM</text>
+  <text x="380" y="343" class="desc" text-anchor="middle">llm_helper.py (ChatGroq)</text>
+
+  <!-- Arrows -->
+  <path class="arrow" d="M220,65 L280,65" />
+  <path class="arrow" d="M480,65 L540,65" />
+  <path class="arrow" d="M140,130 L140,160" />
+  <path class="arrow" d="M240,195 L280,195" />
+  <path class="arrow" d="M480,195 L540,195" />
+  <path class="arrow" d="M640,230 L380,300" />
+  <path class="arrow" d="M380,370 L380,230" />
+
+  <!-- Labels on arrows -->
+  <text x="250" y="55" class="desc" text-anchor="middle">enrich & normalize</text>
+  <text x="410" y="55" class="desc" text-anchor="middle">write processed file</text>
+  <text x="210" y="190" class="desc" text-anchor="middle">load examples</text>
+  <text x="410" y="190" class="desc" text-anchor="middle">user selects inputs</text>
+  <text x="550" y="260" class="desc" text-anchor="middle">prompt → invoke</text>
+
+</svg>
