@@ -38,26 +38,7 @@ High-level flow:
 4. LLM invocation: `llm_helper.py` (ChatGroq client) sends prompt and receives content
 5. UI: `main.py` presents the result in Streamlit
 
-Architecture diagram (image)
-- The workflow diagram is included at `docs/workflow.svg` and is referenced below so it will render in this README when present.
-
-![Architecture and data flow diagram](docs/workflow.svg)
-
-Mermaid diagram (renderable on services that support Mermaid; also provided as a textual fallback):
-
-```mermaid
-flowchart LR
-  A[Data/raw_posts.json] --> B[preprocess.py]
-  B --> C[Data/processed_posts.json]
-  C --> D[few_shot.py]
-  UI[Streamlit UI main.py] --> E[post_generator.py]
-  D --> E
-  E --> F[llm_helper.py (ChatGroq)]
-  F --> UI
-  style UI fill:#f9f,stroke:#333,stroke-width:1px
-  style F fill:#efe,stroke:#333,stroke-width:1px
-```
-
+A
 Textual workflow (fallback)
 - Raw data -> preprocess (extract line_count, language, canonical tags) -> processed dataset
 - Streamlit pulls tag list from processed dataset -> user selects Topic/Language/Length -> generator fetches up to 2 examples -> LLM invoked -> generated post returned and shown in UI
