@@ -102,16 +102,6 @@ Extending the project
 - Introduce unit tests for prompt construction and data preprocessing (mock the LLM).
 - Add CI that lints, runs tests, and validates that Data/processed_posts.json is present.
 
-Try asking
-----------
-- Can you update the repository so that `few_shot.py` uses `Data/processed_posts.json` (matching the existing directory) and provide a small patch?
-- How can I add a fallback LLM adapter so the app can use OpenAI if GROQ_API_KEY is not present?
-- What would be the easiest way to cache LLM responses to avoid repeated identical calls during development?
-
 Contributing
 ------------
 Contributions are welcome. Please open issues or PRs for bug fixes or enhancements. Follow standard commit message and PR practices.
-
-License
--------
-Specify your preferred license (e.g., MIT) here.
